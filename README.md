@@ -18,19 +18,19 @@ En setup se configuran los puertos que usaremos como entradas y salidas, en este
 En loop, se colocó la lógica del programa, en donde lee los valores de los botones y decrementa o aumenta, dependiendo el caso.
 
 El marco de esta función se ve de la siguiente manera:
-. ------------------
-.| counter |   r7   |
-. ------------------
-.|button A | r7 + 4 |
-. ------------------
-.|button B | r7 + 8 |
-. ------------------
-.|         |        |
-. ------------------
-.|    r7   |        |
-. ------------------ 
-.|    lr   |        |
-. ------------------ 
+-. ------------------
+-.| counter |   r7   |
+-. ------------------
+-.|button A | r7 + 4 |
+-. ------------------
+-.|button B | r7 + 8 |
+-. ------------------
+-.|         |        |
+-. ------------------
+-.|    r7   |        |
+-. ------------------ 
+-.|    lr   |        |
+-. ------------------ 
 
 output :
 Esta función se encarga de emitir el valor del contador por un puerto digital. Se utiliza la mascara correspondiente a 1032 (0x3FF) para mostrar en 10 leds. 
@@ -42,23 +42,23 @@ read_button
 Esta funcion es la encargada de generar un contador antirrebote, comenzando con leer el estado del botón (ya sea 1 o 0), dependiendo ese estado regresa un 0 si esta apagado o entra en un ciclo que verifica cuantos estados de encendidos seguidos hay.
 
 el marco de esta función se ve de la siguiente manera:
-. ------------------
-.|   pin   |   r7   |
-. ------------------
-.|  port   | r7 + 4 |
-. ------------------
-.|         | r7 + 8 |
-. ------------------
-.|   bit   |r7 + 12 |
-. ------------------
-.|    i    |r7 + 16 |
-. ------------------ 
-.| counter |r7 + 20 |
-. ------------------  
-.|   r7    |        |
-. ------------------
-.|   lr    |        |
-. ------------------  
+-. ------------------
+-.|   pin   |   r7   |
+-. ------------------
+-.|  port   | r7 + 4 |
+-. ------------------
+-.|         | r7 + 8 |
+-. ------------------
+-.|   bit   |r7 + 12 |
+-. ------------------
+-.|    i    |r7 + 16 |
+-. ------------------ 
+-.| counter |r7 + 20 |
+-. ------------------  
+-.|   r7    |        |
+-. ------------------
+-.|   lr    |        |
+-. ------------------  
 
 Compilar:
 De la manera tradicional:
